@@ -11,15 +11,11 @@
 
 void TaskBlink(void *pvParameters)
 {
-    printf("started\n");
     bl_gpio_enable_output(PIN, 0, 0);
-    printf("configured\n");
     while (1) {
         bl_gpio_output_set(PIN, 1);
-        printf("on\n");
         vTaskDelay(DELAY);
         bl_gpio_output_set(PIN, 0);
-        printf("off\n");
         vTaskDelay(DELAY);
     }
 }
